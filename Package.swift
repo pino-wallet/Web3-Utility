@@ -12,6 +12,7 @@ let package = Package(
             targets: ["Web3-Utility"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/attaswift/BigInt.git", from: "5.3.0")
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -20,7 +21,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Web3-Utility",
-            dependencies: []),
+            dependencies: ["BigInt"],
+            path: "Sources"),
         .testTarget(
             name: "Web3-UtilityTests",
             dependencies: ["Web3-Utility"]),
